@@ -131,3 +131,37 @@ resetButton.addEventListener('click', resetGame);
 
 // Initial game status display
 gameStatus.textContent = `It's ${currentPlayer}'s turn`;
+
+document.addEventListener('DOMContentLoaded', () => {
+  const navLinks = document.querySelectorAll('.main-nav ul li a');
+  const sections = document.querySelectorAll('.new-section');
+
+  function hideAllSections() {
+    sections.forEach(section => {
+      section.style.display = 'none';
+    });
+  }
+
+  function showSectionById(id) {
+    hideAllSections();
+    const target = document.getElementById(id);
+    if (target) {
+      target.style.display = 'block';
+      window.scrollTo({
+        top: target.offsetTop - 70, // Adjust for fixed nav
+        behavior: 'smooth'
+      });
+    }
+  }
+
+  navLinks.forEach(link => {
+    link.addEventListener('click', (event) => {
+      event.preventDefault();
+      const targetId = link.getAttribute('href').substring(1);
+      showSectionById(targetId);
+    });
+  });
+
+  // Show the first section on page load (optional)
+  // showSectionById('gamesSection');
+});

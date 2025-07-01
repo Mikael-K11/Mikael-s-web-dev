@@ -1,87 +1,102 @@
-body {
+/* General Reset & Base */
+* {
+  box-sizing: border-box;
   margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: #f4f4f4;
-  color: #333;
-  display: flex;
-  flex-direction: column; /* Changed to column to stack elements */
-  align-items: center;
-  min-height: 100vh; /* Use min-height for full page content */
-  padding-top: 60px; /* Space for fixed navigation */
+  padding: 0;
 }
 
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f4f6f8;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding-top: 70px;
+}
+
+/* Navigation Bar */
 .main-nav {
   width: 100%;
-  background-color: #222;
+  background-color: #1e2a38;
   padding: 15px 0;
   text-align: center;
-  position: fixed; /* Fixed navigation bar */
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .main-nav ul {
   list-style: none;
-  padding: 0;
-  margin: 0;
   display: flex;
   justify-content: center;
-}
-
-.main-nav ul li {
-  margin: 0 15px;
+  gap: 30px;
 }
 
 .main-nav ul li a {
   color: white;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 600;
   font-size: 1.1em;
-  transition: color 0.3s ease;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 .main-nav ul li a:hover {
-  color: #007acc;
+  background-color: #007acc;
+  color: white;
 }
 
-.container {
+/* Reusable Box Style */
+.box {
   background: white;
   padding: 30px;
-  border-radius: 10px;
-  text-align: center;
-  box-shadow: 0 0 20px rgba(0,0,0,0.1);
-  max-width: 500px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
   width: 90%;
-  margin-bottom: 40px; /* Space between sections */
+  max-width: 800px;
+  margin: 30px 0;
+}
+
+/* Profile Section */
+.container {
+  text-align: center;
 }
 
 .profile-image img {
-  width: 150px;
-  height: 150px;
+  width: 160px;
+  height: 160px;
   object-fit: cover;
   border-radius: 50%;
+  border: 4px solid #007acc;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
   margin-bottom: 20px;
 }
 
 h1 {
-  font-size: 2em;
-  margin: 10px 0;
+  font-size: 2.4em;
+  margin-bottom: 10px;
 }
 
-p {
-  font-size: 1.1em;
-  line-height: 1.5;
+#intro {
+  font-size: 1.15em;
+  color: #555;
 }
 
+/* Buttons */
 button {
   margin-top: 20px;
-  padding: 10px 15px;
+  padding: 12px 20px;
   background-color: #007acc;
   color: white;
   border: none;
   border-radius: 8px;
   cursor: pointer;
+  font-weight: bold;
   transition: background-color 0.3s ease;
 }
 
@@ -89,59 +104,66 @@ button:hover {
   background-color: #005f99;
 }
 
+/* Contact Section */
 .contact-section {
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.08);
-  max-width: 500px;
-  width: 90%;
-  margin-top: 20px;
   text-align: left;
 }
 
 .contact-section h2 {
   text-align: center;
-  margin-bottom: 15px;
   color: #007acc;
+  margin-bottom: 20px;
 }
 
-/* Styles for new sections */
+.contact-section p {
+  margin-bottom: 10px;
+}
+
+/* Section Wrapper */
 .new-section {
+  display: none;
   background: white;
   padding: 30px;
   border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  box-shadow: 0 0 20px rgba(0,0,0,0.08);
   max-width: 800px;
   width: 90%;
-  margin-top: 40px; /* Space from previous section */
-  text-align: left;
+  margin: 30px 0;
 }
 
+/* Section Headers */
 .new-section h2 {
   text-align: center;
   color: #007acc;
   margin-bottom: 20px;
 }
 
+/* Games List */
 .new-section ul {
   list-style-type: disc;
-  margin-left: 20px;
+  padding-left: 20px;
 }
 
+/* Portfolio Items */
 .portfolio-item {
-  background: #f9f9f9;
-  border: 1px solid #eee;
-  padding: 15px;
-  border-radius: 8px;
-  margin-bottom: 15px;
+  background: #f9fafb;
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  transition: box-shadow 0.3s ease;
+}
+
+.portfolio-item:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .portfolio-item h3 {
-  margin-top: 0;
+  margin-bottom: 10px;
   color: #005f99;
 }
 
+/* Map Section */
 .map-placeholder {
   background-color: #e0e0e0;
   height: 300px;
@@ -149,20 +171,20 @@ button:hover {
   justify-content: center;
   align-items: center;
   border-radius: 8px;
-  color: #666;
   font-style: italic;
+  color: #666;
 }
 
-/* Tic Tac Toe Styles */
+/* Tic Tac Toe Grid */
 .tictactoe-grid {
   display: grid;
   grid-template-columns: repeat(3, 100px);
-  grid-template-rows: repeat(3, 100px);
   gap: 5px;
   margin: 20px auto;
-  width: 315px; /* 3 * 100px + 2 * 5px gap */
-  border: 2px solid #333;
-  background-color: #eee;
+  width: 315px;
+  background-color: #ddd;
+  padding: 5px;
+  border-radius: 10px;
 }
 
 .cell {
@@ -172,11 +194,12 @@ button:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 3em;
+  font-size: 2.5em;
   font-weight: bold;
   cursor: pointer;
-  border: 1px solid #ccc;
-  transition: background-color 0.2s ease-in-out;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+  border: 2px solid #ccc;
 }
 
 .cell:hover {
@@ -184,11 +207,11 @@ button:hover {
 }
 
 .cell.X {
-  color: #e74c3c; /* Red for X */
+  color: #e74c3c;
 }
 
 .cell.O {
-  color: #3498db; /* Blue for O */
+  color: #3498db;
 }
 
 #gameStatus {
@@ -198,20 +221,30 @@ button:hover {
   margin-top: 15px;
 }
 
+/* Responsive Tweaks */
+@media (max-width: 600px) {
+  .tictactoe-grid {
+    grid-template-columns: repeat(3, 80px);
+    width: 255px;
+  }
 
-/* ... (existing CSS) ... */
+  .cell {
+    width: 80px;
+    height: 80px;
+    font-size: 2em;
+  }
 
-/* Styles for new sections */
-.new-section {
-  background: white;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.1);
-  max-width: 800px;
-  width: 90%;
-  margin-top: 40px; /* Space from previous section */
-  text-align: left;
-  display: none; /* Add this line to hide them by default */
+  button {
+    width: 100%;
+  }
+
+  .main-nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
 }
 
-/* ... (rest of your CSS) ... */
+html {
+  scroll-behavior: smooth;
+}
+
