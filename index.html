@@ -9,6 +9,14 @@
 </head>
 
 <body>
+    <nav class="main-nav">
+        <ul>
+            <li><a href="#gamesSection">Games</a></li>
+            <li><a href="#portfolioSection">Portfolio</a></li>
+            <li><a href="#mapSection">Map</a></li>
+        </ul>
+    </nav>
+
     <div class="container">
         <div class="profile-image">
             <img src="Ronaldo.jpg" alt="My Photo" id="profilePic" />
@@ -30,9 +38,59 @@
 
     <button onclick="toggleContactSection()">Show/Hide Contact Info</button>
 
-    <script src="script.js"></script>
+    ---
 
-    <div class="tictactoebox"></div>
+    <div id="gamesSection" class="new-section">
+        <h2>Games</h2>
+        <p>This section will showcase some of the games I've developed.</p>
+        <ul>
+            <li>Game 1: Awesome Adventures</li>
+            <li>Game 2: Puzzle Master</li>
+            <li>Game 3: Space Shooter</li>
+        </ul>
+
+        <h3>Tic Tac Toe</h3>
+        <div id="tictactoe" class="tictactoe-grid">
+            <div class="cell" data-cell-index="0"></div>
+            <div class="cell" data-cell-index="1"></div>
+            <div class="cell" data-cell-index="2"></div>
+            <div class="cell" data-cell-index="3"></div>
+            <div class="cell" data-cell-index="4"></div>
+            <div class="cell" data-cell-index="5"></div>
+            <div class="cell" data-cell-index="6"></div>
+            <div class="cell" data-cell-index="7"></div>
+            <div class="cell" data-cell-index="8"></div>
+        </div>
+        <button id="resetButton">Reset Game</button>
+        <p id="gameStatus"></p>
+    </div>
+
+    ---
+
+    <div id="portfolioSection" class="new-section">
+        <h2>Portfolio</h2>
+        <p>Here you'll find a collection of my past projects and works.</p>
+        <div class="portfolio-item">
+            <h3>Project Alpha</h3>
+            <p>A web application for task management.</p>
+        </div>
+        <div class="portfolio-item">
+            <h3>Mobile App Beta</h3>
+            <p>An e-commerce mobile application.</p>
+        </div>
+    </div>
+
+    ---
+
+    <div id="mapSection" class="new-section">
+        <h2>Map</h2>
+        <p>This section could feature an interactive map, perhaps showing places I've worked or studied.</p>
+        <div class="map-placeholder">
+            <p>[Map will be embedded here]</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 
 </body>
 
