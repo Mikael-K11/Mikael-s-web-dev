@@ -165,3 +165,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // Show the first section on page load (optional)
   // showSectionById('gamesSection');
 });
+
+// Toggle Google Mode (light minimalist theme)
+function toggleGoogleMode() {
+  document.body.classList.toggle('google-mode');
+}
+

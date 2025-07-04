@@ -248,3 +248,32 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Google Mode Styles */
+body.google-mode {
+  background-color: white;
+  color: #202124;
+}
+
+body.google-mode .main-nav {
+  background-color: #f8f9fa;
+  box-shadow: none;
+}
+
+body.google-mode .main-nav ul li a {
+  color: #202124;
+}
+
+body.google-mode .main-nav ul li a:hover {
+  background-color: #e8f0fe;
+  color: #1a73e8;
+}
+
+body.google-mode button {
+  background-color: #1a73e8;
+}
+
+body.google-mode button:hover {
+  background-color: #1558b0;
+}
+
+
